@@ -1,32 +1,43 @@
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.testng.AssertJUnit.assertEquals;
 
 public class CalculatorTests {
 
     @Test
     void AnEmptyStringReturnsZero() {
 
-        //Arrange
+        // Arrange
         Calculator systemUnderTest = new Calculator();
 
-        //Act
-        int response =  systemUnderTest.Add("");
+        // Act
+        int response = systemUnderTest.Add("");
 
-        //Assert
-        assertEquals(response,0);
+        // Assert
+        assertEquals(response, 0);
     }
 
     @Test
-    void ASingleNumberReturnsItself(){
-        //Arrange
+    void ASingleNumberReturnsItself() {
+        // Arrange
         Calculator systemUnderTest = new Calculator();
 
-        //Act
-        int response =  systemUnderTest.Add("1");
+        // Act
+        int response = systemUnderTest.Add("1");
 
-        //Assert
-        assertEquals(response,1);
+        // Assert
+        assertEquals(response, 1);
+    }
+
+    @Test
+    void twoNumbersReturnSum() {
+        // Arrange
+        Calculator systemUnderTest = new Calculator();
+
+        // Act
+        int response = systemUnderTest.Add("1,2");
+
+        // Assert
+        assertEquals(response, 3);
     }
 }
