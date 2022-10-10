@@ -84,4 +84,13 @@ public class CalculatorTests {
         // Assert
         assertEquals(response, 6);
     }
+
+    @Test
+    void changedDelimiter() {
+        setUp();
+
+        int response = systemUnderTest.Add("//;\n1;2");
+
+        assertEquals(response, 3);
+    }
 }

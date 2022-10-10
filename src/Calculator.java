@@ -3,11 +3,22 @@ import java.lang.reflect.Array;
 public class Calculator {
     public int Add(String s) {
 
+        String delimiter;
+        String[] numbers;
+
+        if (!s.contains("//")) {
+             delimiter = ",|\n";
+            numbers = s.split(delimiter);
+        } else {
+            delimiter = String.valueOf(s.charAt(2));
+            String[] delimiterAndValues = s.split("\n");
+
+            numbers = delimiterAndValues[1].split(delimiter);
+        }
 
         if (s.equalsIgnoreCase("")) {
             return 0;
         }
-        String[] numbers = s.split(",");
 
         int result = 0;
 
