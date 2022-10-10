@@ -17,4 +17,16 @@ public class CalculatorTests {
         //Assert
         assertEquals(response,0);
     }
+
+    @Test
+    void ASingleNumberReturnsItself(){
+        //Arrange
+        Calculator systemUnderTest = new Calculator();
+
+        //Act
+        int response =  systemUnderTest.Add("1");
+
+        //Assert
+        assertEquals(response,1);
+    }
 }
